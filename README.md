@@ -1,6 +1,3 @@
 # simple_shell
 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmS9AozFviFEJwWWcWwYobJzNmmgrDhf7GVoeYX1Zj&s"
-width="372"
-height="200"
-alt="The gates of shell"/>
+<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg" alt="The gates of shell"/>

@@ -7,7 +7,7 @@ int main(void)
 {
         char *buffer = NULL;
         size_t bufsize = 0;
-        int i = 0, j, len;
+        int i = 0, j = 0, len = 0;
         char *str, *token;
         pid_t pid;
         char **av;
@@ -36,7 +36,6 @@ int main(void)
 		token = strtok(str, " ");
 		while (token)
 		{
-			printf("our token[%d]: %s\n", i, token);
 			av[i] = strdup(token);
 			token = strtok(NULL, " ");
 			i++;

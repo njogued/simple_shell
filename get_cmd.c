@@ -3,27 +3,28 @@
 char *get_cmd(char *name)
 {
 	char *path = NULL;
-	char *token = NULL;
+	char *token = malloc(1024);
 	struct stat st;
-	struct stat pt;
-	char *cmd = malloc(1024);
+	char *cmd;
 
-	if (stat(name, &pt) == 0)
+	if (stat(name, &st) == 0)
 	{
 		cmd = strdup(name);
 		return (cmd);
 	}
 	
 	
-	path = strdup(_getenv("PATH"));
+	path = _getenv("PATH");
+	printf("path is : %s\n", path);
 
 	token = strtok(path, ":");
-
+	printf("%s\n", token);
+	
 	while (token)
 	{
-		strcat(cmd, token);
-		strcat(cmd, "/");
-		strcat(cmd, name);
+		cmd = malloc(sizeof(char) * (strlen(token) + strlen(name) + 1));
+		strcat(cmd, token), strcat(cmd, "/"), strcat(cmd, name);
+		printf("cmd: %s\n token: %s\n", cmd, token);
 		if (stat(cmd, &st) == 0)
 		{
 			return (cmd);
@@ -43,7 +44,7 @@ int main(int ac, char **argv)
 		printf("usage\n");
 	}
 
-	str = strdup(get_cmd(argv[1]));
+	str = get_cmd(argv[1]);
 	if (str != NULL)
 	{
 

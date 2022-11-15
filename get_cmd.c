@@ -15,16 +15,12 @@ char *get_cmd(char *name)
 	
 	
 	path = _getenv("PATH");
-	printf("path is : %s\n", path);
-
 	token = strtok(path, ":");
-	printf("%s\n", token);
 	
 	while (token)
 	{
 		cmd = malloc(sizeof(char) * (strlen(token) + strlen(name) + 1));
 		strcat(cmd, token), strcat(cmd, "/"), strcat(cmd, name);
-		printf("cmd: %s\n token: %s\n", cmd, token);
 		if (stat(cmd, &st) == 0)
 		{
 			return (cmd);
@@ -33,29 +29,6 @@ char *get_cmd(char *name)
 	}
 	free(token);
 	free(path);
+	free(cmd);
 	return (NULL);
-
-}
-int main(int ac, char **argv)
-{
-	char *str = malloc(1024);
-	if (ac < 2)
-	{
-		printf("usage\n");
-	}
-
-	str = get_cmd(argv[1]);
-	if (str != NULL)
-	{
-
-		printf("success: %s\n", str);
-	}
-	else
-	{
-		perror("not found\n");
-	}
-	free(str);
-	return (0);
-
-
 }

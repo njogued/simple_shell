@@ -8,17 +8,21 @@ int main(void)
         char *buffer = NULL;
         size_t bufsize = 0;
         int i = 0, j = 0, len = 0;
-        char *str, *token;
+        char *str = NULL, *token = NULL; 
         pid_t pid;
-        char **av;
+        char **av = NULL;
 
         while (1)
         {
                 printf("$ ");
                 i = getline(&buffer, &bufsize, stdin);
-                if (i == -1 || strcmp(buffer, "exit\n") == 0)
+		if (strcmp(buffer, "exit\n") == 0)
+		{
+			break;
+		}
+                if (i == -1)
                 {
-                        printf("\n");
+			printf("\n");
                         break;
                 }
 		while (buffer[j] != '\0') 

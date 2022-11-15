@@ -6,8 +6,11 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/types.h>
+#include <sys/stat.h>
 extern char **environ;
-
+char *_getenv(const char *name);
+char *_printpath();
+char *get_cmd(char *name);
 
 
 

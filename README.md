@@ -7,9 +7,8 @@ This project is the most important of the first trimester of ALX School, is the 
 The shell is a command-line interpreter or shell that provides a command line user interface for Unix-like operating systems. The shell is both an interactive command language and a scripting language, and is used by the operating system to control the execution of the system using shell scripts.
 
 ## Installation
-You can install the simple shell cloning this repo:
+You can install the simple shell cloning this repo.
 
-- `$ git clone https://github.com/AishaKhalfan/simple_shell.git`
 Next you can compile the files with this command:
 
 - `$ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
